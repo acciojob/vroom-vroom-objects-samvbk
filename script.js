@@ -9,19 +9,20 @@ Car.prototype.getMakeModel = function(){
 	return this.make+" "+this.model;
 }
 
-function SportsCar prototype Car(make, model, topSpeed) {
+function SportsCar(make, model, topSpeed) {
 	Car.call(this,make,model);
 	this.topSpeed = topSpeed;
 }
-
+SportsCar.prototype = Object.create(Car.prototype);
+SportsCar.constructor = SportsCar;
 SportsCar.prototype.getTopSpeed() = function () {
 	return this.topSpeed;
 }
 
 
 const car = new SportsCar("Toyota", "Corolla", 200);
-console.log(carar.getMakeModel());
-console.log(car.getTopSpeed());
+// console.log(car.getMakeModel());
+// console.log(car.getTopSpeed());
 
 // Do not change the code below
 window.Car = Car;
